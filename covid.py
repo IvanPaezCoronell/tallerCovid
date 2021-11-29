@@ -53,3 +53,9 @@ print(f'\nNumero de personas recuperadas {n_recuperados}')
 # 6. Número de personas que ha fallecido
 n_fallecidos = data[data['Estado'] == 'Fallecido'].shape[0]
 print(f'\nNumero de personas fallecidas en Colombia: {n_fallecidos}')
+
+
+# 7. Ordenar de Mayor a menor por tipo de caso
+n_import = data.groupby(
+    'Tipo de contagio').size().sort_values(ascending=False)
+print(f'\n{n_import}')
