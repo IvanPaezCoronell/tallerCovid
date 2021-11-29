@@ -29,3 +29,9 @@ data['Nombre municipio'].replace('Anserma', 'ANSERMA', inplace=True)
 
 n_municipios = len(data.groupby('Nombre municipio').size())
 print(f'\nNumero de municipios afectados: {n_municipios}')
+
+
+# 3. Liste los municipios afectados (sin repetirlos)
+n_muni_afec = data.groupby(
+    'Nombre municipio').size().sort_values(ascending=False)
+print(f'\nMunicipios afectados: {n_muni_afec}')
