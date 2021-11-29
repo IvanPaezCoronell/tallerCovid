@@ -108,3 +108,9 @@ print(f'\n{municipio}')
 muni_falle = data[data['Estado'] == 'Fallecido'].groupby(
     'Nombre municipio').size().sort_values(ascending=False).head(10)
 print(f'\n{muni_falle}')
+
+
+# 16. Liste de mayor a menor los 10 municipios con mas casos de recuperados
+muni_recup = data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f'\n{muni_recup}')
