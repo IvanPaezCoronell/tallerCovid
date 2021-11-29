@@ -59,3 +59,11 @@ print(f'\nNumero de personas fallecidas en Colombia: {n_fallecidos}')
 n_import = data.groupby(
     'Tipo de contagio').size().sort_values(ascending=False)
 print(f'\n{n_import}')
+
+
+# 8. Número de departamentos afectados
+data['Nombre departamento'].replace('Caldas', 'CALDAS', inplace=True)
+data['Nombre departamento'].replace('Tolima', 'TOLIMA', inplace=True)
+
+n_depar = len(data.groupby('Nombre departamento').size())
+print(f'\nNumero de departamentos afectados: {n_depar}')
