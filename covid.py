@@ -119,3 +119,9 @@ print(f'\n{muni_recup}')
 # 17. Liste agrupado por departamento y en orden de Mayor a menor las ciudades con mas casos de contagiados
 data.groupby(['Nombre departamento', 'Nombre municipio']
              ).size().sort_values(ascending=False).head(10)
+
+
+# 18. Número de Mujeres y hombres contagiados por ciudad por departamento
+n_m_h = data.groupby(['Nombre departamento', 'Nombre municipio',
+                     'Sexo']).size().sort_values(ascending=False)
+print(f'\n{n_m_h}')
