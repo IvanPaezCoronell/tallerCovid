@@ -102,3 +102,9 @@ print(f'\n{depar_recup}')
 # 14. Liste de mayor a menor los 10 municipios con mas casos de contagiados
 municipio = data['Nombre municipio'].value_counts().head(10)
 print(f'\n{municipio}')
+
+
+# 15. Liste de mayor a menor los 10 municipios con mas casos de fallecidos
+muni_falle = data[data['Estado'] == 'Fallecido'].groupby(
+    'Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f'\n{muni_falle}')
