@@ -76,4 +76,12 @@ data.groupby('Nombre departamento').size()
 # 10. Ordene de mayor a menor por tipo de atención
 n_tipo_atencion = data.groupby(
     'Ubicación del caso').size().sort_values(ascending=False)
-print(f'\nTipos de atencion: {n_tipo_atencion}')
+print(f'\n{n_tipo_atencion}')
+
+
+# 11. Liste de mayor a menor los 10 departamentos con mas casos decontagiados
+data['Nombre departamento'].replace('BARRANQUILLA', 'ATLANTICO', inplace=True)
+data['Nombre departamento'].replace('CARTAGENA', 'BOLIVAR', inplace=True)
+
+depar = data['Nombre departamento'].value_counts().head(10)
+print(f'\n{depar}')
