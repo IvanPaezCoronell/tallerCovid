@@ -85,3 +85,9 @@ data['Nombre departamento'].replace('CARTAGENA', 'BOLIVAR', inplace=True)
 
 depar = data['Nombre departamento'].value_counts().head(10)
 print(f'\n{depar}')
+
+
+# 12. Liste de mayor a menor los 10 departamentos con mas casos de fallecidos
+depar_falle = data[data['Estado'] == 'Fallecido'].groupby(
+    'Nombre departamento').size().sort_values(ascending=False).head(10)
+print(f'\n{depar_falle}')
