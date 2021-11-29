@@ -71,3 +71,9 @@ print(f'\nNumero de departamentos afectados: {n_depar}')
 
 # 9. Liste los departamentos afectados(sin repetirlos)
 data.groupby('Nombre departamento').size()
+
+
+# 10. Ordene de mayor a menor por tipo de atención
+n_tipo_atencion = data.groupby(
+    'Ubicación del caso').size().sort_values(ascending=False)
+print(f'\nTipos de atencion: {n_tipo_atencion}')
