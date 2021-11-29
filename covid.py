@@ -67,3 +67,7 @@ data['Nombre departamento'].replace('Tolima', 'TOLIMA', inplace=True)
 
 n_depar = len(data.groupby('Nombre departamento').size())
 print(f'\nNumero de departamentos afectados: {n_depar}')
+
+
+# 9. Liste los departamentos afectados(sin repetirlos)
+data.groupby('Nombre departamento').size()
