@@ -131,3 +131,11 @@ print(f'\n{n_m_h}')
 prom_edad = data.groupby(
     ['Nombre departamento', 'Nombre municipio', 'Sexo']).Edad.mean()
 print(f'\n{prom_edad}')
+
+
+# 20. Liste de mayor a menor el número de contagiados por país de procedencia
+data['Nombre del país'].replace('VENEUELA', 'VENEZUELA', inplace=True)
+data['Nombre del país'].replace('MEXICO', 'MÉXICO', inplace=True)
+
+pais = data['Nombre del país'].value_counts()
+print(f'\n{pais}')
