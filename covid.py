@@ -145,3 +145,10 @@ print(f'\n{pais}')
 fech_contagio = data.groupby(
     ['Fecha de diagnóstico']).size().sort_values(ascending=False)
 print(f'\n{fech_contagio}')
+
+
+# 22. Diga cual es la tasa de mortalidad y recuperación que tiene Colombia
+mortalidad = (len(data[data['Estado'] == 'Fallecido']) / len(data)) * 100
+recuperacion = (len(data[data['Recuperado'] == 'Recuperado']) / len(data)) * 100
+print('\nTasa de mortalidad: ', "{:.2f}".format(mortalidad))
+print('\nTasa de recuperacion: ', "{:.2f}".format(recuperacion))
