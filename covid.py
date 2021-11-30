@@ -235,3 +235,8 @@ print(f'\n{edad_falle}')
 # 31. Liste el porcentaje de personas por atención de toda Colombia
 porcen_atenc = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
 print(f'\n {porcen_atenc}')
+
+
+# 32. Haga un gráfico de barras por atención de toda Colombia
+graf_atenc = data['Ubicación del caso'].value_counts().plot.bar()
+print('\nGrafico de barras segun su tipo de atencion')
