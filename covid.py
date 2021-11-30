@@ -245,3 +245,8 @@ print('\nGrafico de barras segun su tipo de atencion')
 # 33. Haga un gráfico de barras por Sexo de toda Colombia
 graf_sexo = data['Sexo'].value_counts().plot.bar()
 print('\nGrafico de barras por sexo en Colombia')
+
+
+# 34. Haga un gráfico de barras por tipo de contagio de toda Colombia
+graf_tip_contag = data['Tipo de contagio'].value_counts().plot.bar()
+print('\nGrafico de barras por tipo de contagio en Colombia')
