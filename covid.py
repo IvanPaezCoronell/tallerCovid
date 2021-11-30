@@ -240,3 +240,8 @@ print(f'\n {porcen_atenc}')
 # 32. Haga un gráfico de barras por atención de toda Colombia
 graf_atenc = data['Ubicación del caso'].value_counts().plot.bar()
 print('\nGrafico de barras segun su tipo de atencion')
+
+
+# 33. Haga un gráfico de barras por Sexo de toda Colombia
+graf_sexo = data['Sexo'].value_counts().plot.bar()
+print('\nGrafico de barras por sexo en Colombia')
