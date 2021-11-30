@@ -230,3 +230,8 @@ plt.show(curv_recu_munic)
 # 30. Liste de mayor a menor la cantidad de fallecidos por edad en toda Colombia.
 edad_falle = data[data['Estado'] == 'Fallecido'].groupby(['Edad']).size().sort_values(ascending=False)
 print(f'\n{edad_falle}')
+
+
+# 31. Liste el porcentaje de personas por atención de toda Colombia
+porcen_atenc = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
+print(f'\n {porcen_atenc}')
