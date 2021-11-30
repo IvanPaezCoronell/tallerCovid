@@ -152,3 +152,12 @@ mortalidad = (len(data[data['Estado'] == 'Fallecido']) / len(data)) * 100
 recuperacion = (len(data[data['Recuperado'] == 'Recuperado']) / len(data)) * 100
 print('\nTasa de mortalidad: ', "{:.2f}".format(mortalidad))
 print('\nTasa de recuperacion: ', "{:.2f}".format(recuperacion))
+
+
+# 23. Liste la tasa de mortalidad y recuperación que tiene cada departamento
+
+# 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
+
+# 25. Liste por cada ciudad la cantidad de personas por atención
+aten = data.groupby(['Nombre municipio', 'Ubicación del caso']).size()
+print(f'\n{aten}')
