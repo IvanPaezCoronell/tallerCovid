@@ -139,3 +139,9 @@ data['Nombre del país'].replace('MEXICO', 'MÉXICO', inplace=True)
 
 pais = data['Nombre del país'].value_counts()
 print(f'\n{pais}')
+
+
+# 21. Liste de mayor a menor las fechas donde se presentaron mas contagios
+fech_contagio = data.groupby(
+    ['Fecha de diagnóstico']).size().sort_values(ascending=False)
+print(f'\n{fech_contagio}')
