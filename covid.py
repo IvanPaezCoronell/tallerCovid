@@ -250,3 +250,17 @@ print('\nGrafico de barras por sexo en Colombia')
 # 34. Haga un gráfico de barras por tipo de contagio de toda Colombia
 graf_tip_contag = data['Tipo de contagio'].value_counts().plot.bar()
 print('\nGrafico de barras por tipo de contagio en Colombia')
+
+
+# 35. Haga un gráfico de barras del número de contagiados, recuperados y fallecidos por fecha de toda Colombia
+graf_contg = data.groupby('Fecha de diagnóstico').size().sort_values().plot.bar(figsize=(15, 4))
+print('\nGrafico de barras de fecha de contagiados')
+plt.show(graf_contg)
+
+graf_recup = data[data['Recuperado'] == 'Recuperado'].groupby('Fecha de diagnóstico').size().sort_values().plot.bar(figsize=(15, 4))
+print('\nGrafico de barras de fecha de los recuperados')
+plt.show(graf_recup)
+
+graf_falle = data[data['Estado'] == 'Fallecido'].groupby('Fecha de diagnóstico').size().sort_values().plot.bar(figsize=(15, 4))
+print('\nGrafico de barras de fecha de los fallecidos')
+plt.show(graf_falle)
