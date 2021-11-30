@@ -225,3 +225,8 @@ plt.show(curv_falle_munic)
 curv_recu_munic = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre municipio').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
 print('\nCurva de los 10 municipios con mas personas recuperadas')
 plt.show(curv_recu_munic)
+
+
+# 30. Liste de mayor a menor la cantidad de fallecidos por edad en toda Colombia.
+edad_falle = data[data['Estado'] == 'Fallecido'].groupby(['Edad']).size().sort_values(ascending=False)
+print(f'\n{edad_falle}')
